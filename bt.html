@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise & fetch</title>
+</head>
+<body>
+    <div id="loading" style="display: none;">Loading...</div>
+    <button id="btnSubmit">promise</button>
+    <div id="container"></div>
+
+    <script type="text/javascript">
+      function fakeApi(url) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            fetch(url)
+              .then((response) => resolve(response.json()))
+              .catch((err) => reject(err));
+          }, 500);
+        });
+      }
+
+     document.getElementById('btnSubmit').addEventListener('click', () => {
+      document.getElementById('loading').style.display = 'block';
+      
+      fakeApi("https://jsonplaceholder.typicode.com/posts/1")
+      .then(value => {
+        const container = document.getElementById('container');
+        container.innerHTML = JSON.stringify(value)
+      })
+      .catch(err => console.log('err: ', err))
+      .finally(function() {
+        document.getElementById('loading').style.display = 'none';
+      })
+
+
+    //   fetch("https://jsonplaceholder.typicode.com/todos/1")
+    //     .then(response => response.json())
+    //     .then(data => console.log(data));
+
+     })
+    </script>
+</body>
+</html>

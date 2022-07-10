@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://use.fontawesome.com/75e724f21f.js"></script>
+</head>
+<body>
+  <div id="loading" class="lds-roller">
+    <div class="loadingMain">
+      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Todo List</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="contactForm.html">Contact Form</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <br />
+
+  <h2>JS Issue Tracker</h2>
+
+  <div class="content">
+    <h4>Add New Issue:</h4>
+    <form id="todoForm" class="">
+      <p class="title">Description</p>
+      <input id="description" type="text" class="form-control form-name" placeholder="Describe the issue...">
+      <div id="msgDescription" class="block invalid-feedback"></div>
+      <br/>
+      <p class="name">Severity</p>
+      <select id="severity" class= "form-select" >
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Add</button>
+
+      
+      <div id="id01" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body"><p>Registered Successfully !</p></div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+    
+  <div id="issues"></div>
+  <div class="task">
+    <button id = 'deleteAll' onclick = "deleteAll()" type="button" class="btn btn-secondary btn-delete-all">Delete All</button>
+    
+    <div class="filter ms-5">Filter by:
+      <span>
+        <select name="filter-todos" id="filter">
+          <option value="all">All</option>
+          <option value="open">Open</option>
+          <option value="close">Closed</option>
+        </select>
+      </span>
+    </div>
+
+    <input id="inputSearchName" class="ms-5 my-4" type="text" id="myInput" placeholder="Search for names..">
+
+    <div class="ms-5 sortTool">
+      <select class="sort py-1 direction" id="inputSortByName">
+        <option value="" disabled>Sort by Name</option>
+        <option value="asc" sort="asc">Name ASC</option>
+        <option value="desc" sort="desc">Name DESC</option>
+      </select>
+    </div>
+
+    <div id="boxTodos"></div>
+    
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <script src="index.js"></script>
+</body>
+</html>

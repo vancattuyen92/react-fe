@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0 20px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.react-router {
+  margin: 0;
+  padding: 0;
+}
+.react-router li {
+  list-style-type: none;
+}
+
+.react-router li a {
+  padding: 0 10px;
+  display: inline-block;
+}
+
+.user_list {
+  margin: 0;
+  padding: 0;
+}
+
+.user_list li {
+  list-style: none;
+  border: 1px solid #000;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.user_mode {
+  display: flex;
+  align-items: center;
+}
+
+.user_mode h2 {
+  margin-right: 10px;
+}
+
+.pagination button {
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+}

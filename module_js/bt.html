@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="abc">click to open a new tab</div>
+
+    <script type="module">
+        import { sum } from  "./utils.js"
+        import openNewTab from './openNewTab.js'
+        console.log(sum(5,2))
+        let a  = document.getElementById('abc')
+        a.addEventListener('click', function() {
+            openNewTab('https://mail.google.com/mail/u/0/')
+        })       
+    </script>
+</body>
+</html>

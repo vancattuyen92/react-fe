@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import & Export</title>
+</head>
+<body>
+    <h1>Import & Export Bt1</h1>
+
+    <div id="blankTab">click here to open new tab</div>
+    <script type="module">
+      import sum, { divide } from './helper.js';
+      import openNewTab from './openNewTab.js';
+      import * as CONFIGS from './config.js';
+      import { timeConvert } from './multiFunction.js';
+
+      const resSum = sum(2, 3)
+      console.log('heplerSum: ', resSum)
+
+      const resdivide = divide(5,2);
+      console.log('divide: ', resdivide)
+
+      const blankTab = document.getElementById('blankTab');
+      blankTab.addEventListener('click', () => {
+        openNewTab('abc')
+      })
+
+
+      const resTime = timeConvert(13504323);
+      console.log('resTime: ', resTime)
+
+      // check role users
+      const roleUser = 'admin';
+      const isRole = CONFIGS.ROLE_USER.includes(roleUser)
+      console.log('check role users: ', isRole)
+      
+    </script>
+</body>
+</html>

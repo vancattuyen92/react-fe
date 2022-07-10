@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap");
+* {
+  color: #333;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+html, body {
+  font-family: 'Cairo', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+  color: white;
+}
+
+.j-between {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.a-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+button {
+  border: none;
+  font-family: 'Cairo', sans-serif;
+  background: #2ebaef;
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: white;
+  color: gray;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.App {
+  background-color: #d7e5f0;
+}
+
+.mainContent {
+  margin: 0 auto;
+  width: 400px;
+  height: auto;
+  background: white;
+}
+
+.mainContent .banner {
+  background: url(../assets/1533749767196.jfif) no-repeat bottom center/cover;
+  width: 100%;
+  height: 250px;
+  position: relative;
+}
+
+.mainContent .banner .bg-blur {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(70, 83, 158, 0.3);
+  z-index: 10;
+}
+
+.mainContent .banner h1 {
+  position: relative;
+  z-index: 11;
+  color: white;
+  font-weight: 200;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.mainContent .listContainer .todo-item {
+  margin: 20px;
+  padding-bottom: 20px;
+  border-width: 2px;
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  -o-border-image: linear-gradient(to right, white 5%, #2ebaef, #46539e, #2ebaef, white 95%) 1;
+     border-image: -webkit-gradient(linear, left top, right top, color-stop(5%, white), color-stop(#2ebaef), color-stop(#46539e), color-stop(#2ebaef), color-stop(95%, white)) 1;
+     border-image: linear-gradient(to right, white 5%, #2ebaef, #46539e, #2ebaef, white 95%) 1;
+}
+
+.mainContent .listContainer .icon {
+  width: 35px;
+  height: 35px;
+  border: 1px solid rgba(46, 186, 239, 0.3);
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.mainContent .listContainer .todo-status {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#d7e5f0), color-stop(#46539e), to(#2ebaef));
+  background-image: linear-gradient(to bottom right, #d7e5f0, #46539e, #2ebaef);
+  color: white;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.mainContent .listContainer .todo-info {
+  letter-spacing: 1.25px;
+  margin: 2px 0 0 10px;
+}
+
+.mainContent .listContainer .todo-title {
+  font-weight: 600;
+}
+
+.mainContent .listContainer .todo-author {
+  font-weight: 400;
+  color: #b6b6b6;
+  font-size: 14px;
+  margin-top: -7px;
+}
+
+.mainContent .addButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 40px;
+  font-weight: 300;
+  margin: 10px 0 30px 340px;
+  line-height: 0;
+  -webkit-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 0 20px 0;
+}
+
+.mainContent .addButton:hover {
+  background-color: #46539e;
+  -webkit-box-shadow: 0px 15px 20px rgba(70, 83, 158, 0.4);
+          box-shadow: 0px 15px 20px rgba(70, 83, 158, 0.4);
+  color: white;
+  -webkit-transform: translateY(-7px);
+          transform: translateY(-7px);
+}
+
+.mainContent .loading-button {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#d7e5f0), color-stop(#46539e), to(#2ebaef));
+  background-image: linear-gradient(to bottom right, #d7e5f0, #46539e, #2ebaef);
+  border-radius: 5px;
+  margin-left: 250px;
+  margin-top: 15px;
+  font-size: 13px;
+  padding: 5px 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.mainContent .loading-button:hover {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#2ebaef), color-stop(#46539e), to(#d7e5f0));
+  background-image: linear-gradient(to bottom right, #2ebaef, #46539e, #d7e5f0);
+  color: white;
+}
+
+.addTodo {
+  background-color: #d7e5f0;
+  height: 100vh;
+}
+
+.addTodo .addTodo-container {
+  padding-top: 30px;
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 400px;
+  height: auto;
+  background-color: #46539e;
+  height: 500px;
+}
+
+.addTodo .addTodo-title {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.addTodo .icon1 {
+  height: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(46, 186, 239, 0.25);
+  padding: 10px;
+  margin: 20px 50px;
+  width: 40px;
+}
+
+.addTodo .addTodo-form {
+  text-align: center;
+}
+
+.addTodo .addTodo-form input {
+  width: 300px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #2ebbef4b;
+  background-color: #46539e;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding-bottom: 5px;
+}
+
+.addTodo .addTodo-form input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.226);
+  letter-spacing: 1px;
+}
+
+.addTodo .addTodo-form input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.226);
+  letter-spacing: 1px;
+}
+
+.addTodo .addTodo-form input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.226);
+  letter-spacing: 1px;
+}
+
+.addTodo .addTodo-form input::placeholder {
+  color: rgba(255, 255, 255, 0.226);
+  letter-spacing: 1px;
+}
+
+.addTodo .addTodo-form .submit-button {
+  width: 300px;
+  margin-top: 50px;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+/*# sourceMappingURL=App.css.map */

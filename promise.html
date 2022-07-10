@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise & fetch</title>
+</head>
+<body>
+    <h1>Promise</h1>
+    <div id="loading" style="display: none;">Loading...</div>
+    <button id="btnSubmit">fetch todo promise</button>
+    <div id="container"></div>
+
+    <input type="file"/>
+    <button id="btnUploadFile" type="button">upload file</button>
+
+    <script type="text/javascript">
+      function fakeApi(url) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            fetch(url)
+              .then((response) => resolve(response.json()))
+              .catch((err) => reject(err));
+          }, 2000);
+        });
+      }
+
+     document.getElementById('btnSubmit').addEventListener('click', () => {
+      document.getElementById('loading').style.display = 'block';
+      
+      fakeApi("https://jsonplaceholder.typicode.com/todos/1")
+      .then(value => {
+        const container = document.getElementById('container');
+        container.innerHTML = JSON.stringify(value)
+      })
+      .catch(err => console.log('err: ', err))
+      .finally(function() {
+        document.getElementById('loading').style.display = 'none';
+      })
+
+
+      // method fetch
+      const newUsers = {
+        email: 'truong@gmail.com',
+        password: '123'
+      }
+      fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'plain/txt',
+        },
+        body: JSON.stringify(newUsers)
+      }).then(response => console.log('method: ', response))
+     })
+
+      // upload file
+      document.getElementById('btnUploadFile').addEventListener('click', () => {
+        const formData = new FormData();
+        const fileField = document.querySelector('input[type="file"]');
+
+        formData.append('username', 'abc123');
+        formData.append('avatar', fileField.files[0]);
+
+        // show loading
+        // ....
+
+        // fetch api
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+          method: 'PUT',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(result => {
+          console.log('Success:', result);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        })
+        .finally(() => {
+          console.log('finally')
+          // hide loading
+        });
+
+        // hide loading
+      })
+
+      // create promise
+      const isShow = true;
+      const p = new Promise((resolve, reject) => {
+        if(isShow) {
+          resolve(1)
+        } else {
+          reject('something is wrong')
+        }
+      })
+      // way1
+      p
+        .then(value => console.log('create promise: ', value))
+        .catch(error => console.log('fail promise: ', error))
+
+      // way2
+      p
+        .then(
+          value => console.log('create promise: ', value),
+          error => console.log('error then promise: ', error)
+        )
+        .catch(error => console.log('fail promise: ', error))
+      
+
+        // chain promise
+        p.then(value => value)
+          .then(valu2 => valu2 * 3)
+          .then(val3 => console.log(val3))
+          .finally(() => {
+            console.log('promise chain finally')
+          })
+
+
+          // single thread 
+
+        // promise all
+        const fetchApi = url => {
+          return fetch(`https://tony-json-server.herokuapp.com/api/${url}`, {
+            method: 'GET',
+          })
+          .then(res => res.json())
+          .then(res =>  res)
+        }
+        const fetchTodos = fetchApi('todos');
+        const fetchPhotos = fetchApi('photos')
+        const fetchUsers = fetchApi('users')
+
+        Promise.all([fetchUsers, fetchTodos, fetchPhotos])
+              .then(values => {
+                console.log('promise all success: ', values)
+              })
+              .catch(error => console.log('promise all error: ', error))
+
+    </script>
+</body>
+</html>

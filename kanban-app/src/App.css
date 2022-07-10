@@ -1,0 +1,214 @@
+.myapp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 30px 0 20px 20px;
+}
+
+.orange {
+  background-color: #ff9800;
+}
+
+.blue {
+  background-color: #3f51b5;
+}
+
+.green {
+  background-color: #4caf50;
+}
+
+.Header {
+  max-width: 100%;
+  height: 66px;
+  background-color: #3f51b5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative;
+}
+
+.Header .select {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  left: 75%;
+  width: 120px;
+  background-color: #3f51b5;
+}
+
+.Header .setting {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  left: 90%;
+  color: white;
+  font-size: 20px;
+}
+
+.Header .account {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  left: 95%;
+  color: white;
+  font-size: 20px;
+}
+
+.content {
+  width: 100%;
+  margin-left: 300px;
+}
+
+.MenuColumn {
+  width: 300px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-right: 1px solid rgba(0, 0, 0, 0.178);
+}
+
+.MenuColumn .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 21px;
+  padding: 15px 45px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.178);
+}
+
+.MenuColumn .logo img {
+  width: 35px;
+  height: auto;
+}
+
+.MenuColumn .menu {
+  padding: 15px 20px;
+  color: rgba(63, 63, 63, 0.815);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.MenuColumn .menu .select {
+  padding-bottom: 20px;
+}
+
+.MenuColumn .menu .select span {
+  position: relative;
+  margin-left: 20px;
+}
+
+.KanbanBoard .top-part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.KanbanBoard .top-part .add-task {
+  border: none;
+  background-color: #3f51b5;
+  color: white;
+  padding: 5px 10px;
+  height: 20px;
+  margin: 30px 20px 0 0;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.KanbanBoard .top-part .add-task .icon {
+  font-size: 10px;
+  font-weight: 400;
+  margin-right: 10px;
+}
+
+.KanbanBoard .board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: solid 1px rgba(0, 0, 0, 0.178);
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 20px;
+}
+
+.KanbanBoard .column {
+  width: 32%;
+  border: solid 1px rgba(0, 0, 0, 0.178);
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.KanbanBoard .column .column-title {
+  font-size: 23px;
+  padding: 10px 15px;
+  color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.cardTodos {
+  border: solid 1px rgba(0, 0, 0, 0.178);
+  margin: 15px;
+  padding: 15px 15px 0 15px;
+  color: #3f3f3f;
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.cardTodos .issue {
+  margin-bottom: 15px;
+}
+
+.cardTodos .button-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cardTodos .button {
+  border: none;
+  background-color: white;
+  color: #3f51b5;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.cardTodos .author {
+  font-size: 15px;
+  color: rgba(63, 63, 63, 0.678);
+}
+/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <script>
+      // lession: multiple(5)(10) = 50
+
+      // way 1: normal function
+      function multiple(num1) {
+        return function (num2) {
+          return num1 * num2
+        }
+      }
+
+      // way 2: arrow function
+      const arrowMultiple = num1 => num2 => num1 * num2
+
+      const result = multiple(5)(10);
+      const resultArrow = arrowMultiple(5)(10);
+      console.log('result closure: ', result, resultArrow)
+    </script>
+</body>
+</html>

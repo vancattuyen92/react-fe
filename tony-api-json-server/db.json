@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": "13123",
+      "firstName": "Tony",
+      "lastName": "Nguyen",
+      "email": "tonynguyen@gmail.com"
+    }
+  ],
+  "photos": [
+    {
+      "id": "fado-dfae",
+      "title": "Sport 1",
+      "category": "sport",
+      "description": "nihjamd alopruimg",
+      "image": "http://placeimg.com/640/480/sports"
+    }
+  ]
+}

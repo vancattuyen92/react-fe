@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Async Await</h1>
+    <script type="text/javascript">
+        // fetch(`https://tony-json-sever.herokuapp.com/api/users`,{
+        //    method: 'GET',
+        //})
+        async function demo() {
+            return 1
+        }
+
+        //way 1: recommended
+        async function fetchRes() {
+            const res = await demo();
+            console.log('fetchRes: ', res)
+        }
+
+        //way 2
+        demo().then(val => console.log('way2: ', val))
+        fetchRes();
+
+        //fetch real data 1
+        async function httpGet(url) {
+            return fetch(`https://tony-json-server.herokuapp.com/api/${url}`, {
+                method: 'GET',
+            })
+        }
+        async function fetchUsers() {
+            const res = await httpGet('users');
+            const data = await res.json();
+            console.log('fetchUsers: ', data)
+        }
+        fetchUsers();
+
+        // 2
+        async function fetchUsers() {
+            const res = await fetch(`https://tony-json-server.herokuapp.com/api/users`, {
+                method: 'GET',
+            })
+            const data = await res.json();
+            console.log('fetchUsers: ', data)
+        }
+        fetchUsers();
+
+        // try catch
+        async function httpGet(url) {
+            return fetch(`https://tony-json-server.herokuapp.com/api/${url}`, {
+                method: 'GET',
+            })
+        }
+        async function fetchUsers() {
+            const parmam = 1;
+            try {
+                //success
+                const res = await httpGet('users');
+                const data = await res.json();
+                console.log('fetchUsers: ', data)
+            } catch (err) {
+                //failure
+                console.log('error fetchUsers: ', err)
+            }
+        }
+        fetchUsers();
+
+
+        //add new user POST
+        async function addNewUSer() {
+            const newUsers = {
+                email: 'truong@gmail.com',
+                password: '123'
+            }
+            try {
+                const res = await fetch("https://jsonplaceholder.typicode.com/users", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'plain/txt',
+                    },
+                    body: JSON.stringify(newUsers)
+                })
+                const data = await res.json();
+                console.log('add new users: ', data)
+            } catch (err) {
+                // failure
+                console.log('error add new : ', err)
+            }
+            //use newUsers
+        }
+        addNEwUser();
+
+        // sequential function
+        async function getUserById() {
+            //fetch user by id
+            try {
+                const users = await httpGet('users');
+                const resUSer = await users.json();
+                const idUser = resUser.data[0].id;
+
+                // fetch todos
+                const todos = await httpGet('todos');
+                const resTodo = await todos.json();
+                const getTodoByUserId = resTodo.data.filter(todo => todo.userId === idUser)
+                console.log('sequential function: ', getTodoByUserId)
+            } catch (err) {
+                //failure
+                console.log('error fetchUsers: ', err)
+            }
+        }
+        getUserById();
+
+    </script>
+</body>
+</html>
